@@ -85,7 +85,7 @@ Table 4. Hidden-size sweep on HAR, test accuracy over 3 seeds and parameter coun
 | 64 | 0.8984 ± 0.0073 | 19,590 | 0.9083 ± 0.0098 | 14,790 |
 | 128 | 0.9108 ± 0.0133 | 71,942 | 0.9115 ± 0.0061 | 54,150 |
 
-<div class="pair">
+<div class="pair big">
 
 ![Figure 4](problem1/figures/p1_fig05_grad_norms.png)
 
@@ -109,7 +109,11 @@ Figure 6. RNN at T = 200 with and without clipping. (a) Validation MSE per epoch
 
 <span class="lead">Accuracy, parameters and time.</span> On HAR the GRU and the LSTM are within one std of each other and about 10 points above the RNN (Table 2). The GRU matches the LSTM with 25% fewer parameters and a shorter epoch (0.30 s against 0.39 s). Accuracy drops slowly as $h$ shrinks, and at any parameter count the GRU is above the LSTM (Table 4, Figure 5b).
 
+<div class="keep">
+
 <span class="lead">Wearable choice.</span> I would use the GRU with $h = 64$: 14,790 parameters, 3.7 times fewer than the GRU at $h = 128$ and 4.9 times fewer than the LSTM at $h = 128$, for an accuracy of 0.9083, 0.3 points below the best model (Table 4). It is also the cell that kept long-range memory (Table 3, Figure 4). The RNN is smaller but 10 points less accurate (Table 2). The s/epoch figures are GPU training times, not device energy, so the battery argument rests on parameter count, which sets memory and multiply-adds per step.
+
+</div>
 
 ## Problem 2: Transformer from scratch
 
@@ -179,19 +183,26 @@ Figure 7. Left: P2.4 train and validation loss over 5,000 steps (right axis in b
 
 Figure 8. Attention weights of last-layer heads 0 and 3 on the last 24 characters of the line. The upper triangle is zero because of the causal mask.
 
+<div class="side">
+<div class="side-text">
+
 (c) No causal mask. The same 4-head model trained for 1,500 steps without the mask reaches a train loss of 0.040 nats, against 1.719 with it (Figure 9). Every position can now attend to the character it must predict, so the model copies it, and the validation loss of 0.021 nats is computed by the same leaky model, so it measures nothing. At generation time there are no future characters to copy, and the sample is a colon followed only by newlines.
 
-(d) Context length. One training step of the P2.4 model on batches of $64 \times n$ takes 19.0, 33.2, 85.4 and 242.6 ms and peaks at 202, 407, 950 and 2,766 MB for $n$ = 64, 128, 256 and 512 (Figure 10; mean of 10 steps after 3 warm-up steps, peak memory reset for each $n$). The attention scores cost $O(n^2 d)$ per layer and the projections and feed-forward $O(n d^2)$. The fitted log-log slopes are 1.24 for time and 1.25 for memory, below 2, because at $d = 128$ and these lengths the linear terms still carry much of the cost. Each doubling costs 1.7, 2.6 and 2.8 times more time and 2.0, 2.3 and 2.9 times more memory, so the curves bend toward the quadratic factor of 4.
-
-<div class="pair">
+</div>
+<div class="side-fig">
 
 ![Figure 9](problem2/figures/p2_fig06_no_mask.png)
 
-![Figure 10](problem2/figures/p2_fig07_context_scaling.png)
+Figure 9. Loss with and without the causal mask (top) and a sample from the no-mask model (bottom).
 
 </div>
+</div>
 
-Figure 9 (left). Train and validation loss with and without the causal mask, and a sample from the no-mask model. Figure 10 (right). Time and peak memory per step against context length (log-log), with $n$ and $n^2$ guides.
+(d) Context length. One training step of the P2.4 model on batches of $64 \times n$ takes 19.0, 33.2, 85.4 and 242.6 ms and peaks at 202, 407, 950 and 2,766 MB for $n$ = 64, 128, 256 and 512 (Figure 10; mean of 10 steps after 3 warm-up steps, peak memory reset for each $n$). The attention scores cost $O(n^2 d)$ per layer and the projections and feed-forward $O(n d^2)$. The fitted log-log slopes are 1.24 for time and 1.25 for memory, below 2, because at $d = 128$ and these lengths the linear terms still carry much of the cost. Each doubling costs 1.7, 2.6 and 2.8 times more time and 2.0, 2.3 and 2.9 times more memory, so the curves bend toward the quadratic factor of 4.
+
+![Figure 10](problem2/figures/p2_fig07_context_scaling.png)
+
+Figure 10. Time and peak memory per training step against context length (log-log), with $n$ and $n^2$ guides.
 
 ### Bonus: LSTM-versus-Transformer character model
 
@@ -201,9 +212,7 @@ A 2-layer `nn.LSTM` (embedding 65 × 128, 256 units, dropout 0.1) trained with t
 
 ## AI-use statement
 
-I used AI for research, verifications, validation and to look up academical references. Though the AI helped me to build
-this project wrt to as a helper. But the project accountability and design, development, execution was done by me. Tools i
-used: ChatGPT, Claude, M365 copilot on Microsoft word.
+I used AI for research, verifications, validation and to look up academical references. Though the AI helped me to build this project wrt to as a helper. But the project accountability and design, development, execution was done by me. Tools i used: ChatGPT, Claude, M365 copilot on Microsoft word.
 
 ## References
 
