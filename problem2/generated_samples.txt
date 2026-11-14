@@ -1,0 +1,59 @@
+=== Temperature 0.2 (top-k=40, seed=7, prompt="ROMEO:\n") ===
+What shall be the sea of the senses of the state
+The season of the prince of the sense of the world.
+
+KING RICHARD III:
+What is the comes of the country of the children.
+
+KING RICHARD III:
+And therefore the court of the state the country.
+
+KING RICHARD III:
+The cousin of the court of the country's death,
+And let the send that hath shall be so much and so some the country.
+
+KING RICHARD III:
+What is the senators of the world of the country.
+
+CORIOLANUS:
+What we shall be the man of the constant th
+
+=== Temperature 0.8 (top-k=40, seed=7, prompt="ROMEO:\n") ===
+At 'tis encounters, I have so not streets him be now?
+
+CLARENCE:
+Romeo, sir; yet she cause the behold that we may return.
+
+MENENIUS:
+Well, now, trage own the most wester thou resk?
+
+ESCALUS:
+What they do unto the vintoney thus and shall be
+And the friends with and simple are confession.
+In thou dost thou wast thou shalt hath determing come
+And seems to begge the successs'd moister something
+Is not to be grave to his abuse of thee.
+
+First Murderer:
+I saw you will
+From of this displain cannot in t
+
+=== Temperature 1.5 (top-k=40, seed=7, prompt="ROMEO:\n") ===
+At 'many,
+To will, know!-'As wisser her father-faults;
+my rather Romeo, sweet, 'twas Tauch'd.
+
+PIRDETA:
+3 call'd, Hath grace kill the secret
+Against Sowly prince upsson that vrivage;
+Lasstly you faults not together now too.
+If all this are clett,-frient the Thinef;
+Would Arupce, down. Come, Thran are you well.'
+
+RIVERS:
+As thus so; where in tews Isabels myself;
+Your hands wails to some toe blling him:
+For I was!
+Prodam, sir? what wath warra homel, I see; let's s
+strange to Angelo by peace, I, de
+

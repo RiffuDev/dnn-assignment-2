@@ -1,0 +1,15 @@
+.venv/
+data/
+cache/
+_disposable/
+*.tmp
+.DS_Store
+__pycache__/
+.ipynb_checkpoints/
+.ruff_cache/
+colab_upload.zip
+*_DNN_Assignment.zip
+report_build/node_modules/
+report_build/body.md
+report.html
+~$*

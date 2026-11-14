@@ -1,0 +1,45 @@
+@page { size: A4; margin: 20mm 20mm 20mm 20mm; }
+:root { --navy: #1f3a5f; --accent: #2e86ab; --rule: #c9d3df; --band: #f2f5f9; }
+html { font-size: 11pt; }
+body { font-family: "Charter", "Georgia", serif; line-height: 1.2; color: #1a1a1a; margin: 0; }
+p { margin: 0 0 4pt 0; text-align: justify; hyphens: auto; }
+
+.title-block { border-bottom: 2px solid var(--navy); padding-bottom: 6pt; margin-bottom: 10pt; }
+.title-block h1 { font-family: "Helvetica Neue", Arial, sans-serif; color: var(--navy); font-size: 17pt; margin: 0 0 4pt 0; letter-spacing: 0.2px; }
+.title-block .meta { font-size: 10.5pt; margin: 1pt 0; text-align: left; }
+.title-block .meta b { color: var(--navy); }
+
+h2 { font-family: "Helvetica Neue", Arial, sans-serif; color: #fff; background: var(--navy); font-size: 12.5pt; padding: 3pt 7pt; margin: 12pt 0 6pt 0; border-radius: 2px; break-after: avoid; }
+h3 { font-family: "Helvetica Neue", Arial, sans-serif; color: var(--navy); font-size: 11pt; margin: 6pt 0 2pt 0; padding-bottom: 1pt; border-bottom: 1px solid var(--rule); break-after: avoid; }
+
+code { font-family: "Menlo", monospace; font-size: 8.8pt; background: var(--band); padding: 0 2px; border-radius: 2px; }
+
+figure { margin: 3pt 0 3pt 0; text-align: center; break-inside: avoid; }
+figure img { max-width: 100%; max-height: 44mm; }
+figure.wide img { max-width: 100%; }
+figcaption { font-size: 9pt; color: #333; text-align: left; margin-top: 2pt; padding: 0 4%; }
+figcaption b, .tcap b { color: var(--navy); }
+
+.tcap { font-size: 9pt; margin: 6pt 0 2pt 0; text-align: left; break-after: avoid; }
+table { border-collapse: collapse; margin: 0 auto 5pt auto; font-size: 9pt; break-inside: avoid; }
+thead th { background: var(--navy); color: #fff; font-family: "Helvetica Neue", Arial, sans-serif; font-weight: 600; padding: 2.5pt 7pt; }
+td { padding: 2pt 7pt; border-bottom: 1px solid var(--rule); text-align: center; }
+td:first-child { text-align: left; }
+tbody tr:nth-child(even) td { background: var(--band); }
+
+mjx-container[display="true"] { margin: 4pt 0 !important; }
+mjx-container svg { max-width: 100%; }
+
+ol { margin: 0 0 5pt 0; padding-left: 16pt; font-size: 9.5pt; }
+li { margin-bottom: 1pt; }
+.newpage { break-before: page; }
+.lead { font-weight: bold; color: var(--navy); }
+
+.pair { display: flex; gap: 8pt; align-items: flex-start; break-inside: avoid; margin: 4pt 0 6pt 0; }
+.pair figure { flex: 1; margin: 0; }
+.pair figure img { max-height: 44mm; width: 100%; object-fit: contain; }
+.tight table { font-size: 8.5pt; }
+h2 { margin-top: 8pt; }
+
+p:has(> .fcap) { font-size: 9pt; color: #333; margin-top: 0; }
+.fcap b { color: var(--navy); }
